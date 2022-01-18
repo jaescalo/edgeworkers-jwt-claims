@@ -6,5 +6,9 @@ import { logger } from 'log';
 
 export function onClientRequest (request) {
     let jsonWebToken = request.getHeader('jwt');
-    logger.log(jsonWebToken);
+    let base64Payload = jsonWebToken.split('.')[1];
+    logger.log(base64Payload);
+
+    let decodedPayload = JSON.parse(window.atob(base64Payload));
+    logger.log(decodedPayload);
 }
