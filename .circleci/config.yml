@@ -15,7 +15,7 @@ executors:
       - image: akamai/edgeworkers
     working_directory: /root/edgeworkers
     environment:
-      EWVERSION: 4.04
+      EWVERSION: 4.05
       EWID: 4885
       BUNDLENAME: ew-bundle.tgz
       DESCRIPTION: "Extract claims from JWT"
