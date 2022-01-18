@@ -1,0 +1,9 @@
+{
+    "edgeworker-version": "EWVERSION",
+    "bundle-version" : 1,
+    "api-version" : "4.0",
+    "description" : "DESCRIPTION",
+    "misc" : {
+        "author" : "Some Super User"
+     }
+}
