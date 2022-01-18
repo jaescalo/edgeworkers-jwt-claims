@@ -1,4 +1,3 @@
-import 'http-request';
 import { logger } from 'log';
 
 var lib = {};
