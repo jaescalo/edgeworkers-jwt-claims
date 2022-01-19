@@ -197,7 +197,7 @@ lib.base64;
 const base64url = lib.base64url;
 lib.codec;
 
-export function onClientRequest(request) {
+function onClientRequest(request) {
     const jwtHeader = request.getHeader('jwt');
     const jwtHeaderString = JSON.stringify(jwtHeader);
     logger.log(jwtHeaderString);
@@ -218,3 +218,5 @@ export function onClientRequest(request) {
     logger.log(jwtJsonObject);
     logger.log(jwtJsonObject['name']);
 }
+
+export { onClientRequest };
