@@ -183,6 +183,7 @@ export function onClientRequest (request) {
     let jwtBase64Payload = jwtHeaderString.split('.')[1];
     logger.log(jwtBase64Payload);
 
-  //  let jwtBase64PayloadDecoded = base64url(jwtBase64Payload);
-  //  logger.log(jwtBase64PayloadDecoded);
+    let jwtBase64PayloadDecoded = base64url.parse(jwtBase64Payload);
+    logger.log(typeof(jwtBase64PayloadDecoded));
+    logger.log(jwtBase64PayloadDecoded);
 }
