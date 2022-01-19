@@ -186,4 +186,8 @@ export function onClientRequest (request) {
     let jwtBase64PayloadDecoded = base64url.parse(jwtBase64Payload, { loose: true });
     logger.log(typeof(jwtBase64PayloadDecoded));
     logger.log(jwtBase64PayloadDecoded);
+
+    let jwtBase64PayloadDecodedString = String.fromCodePoint(...jwtBase64PayloadDecoded);
+    console.log(typeof(jwtBase64PayloadDecodedString));
+    console.log(jwtBase64PayloadDecodedString);
 }
