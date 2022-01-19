@@ -1,4 +1,5 @@
 import { logger } from 'log';
+import { httpRequest } from 'http-request';
 
 var lib = {};
 
@@ -197,7 +198,7 @@ lib.base64;
 const base64url = lib.base64url;
 lib.codec;
 
-function onClientRequest(request) {
+async function onClientRequest(request) {
     const jwtHeader = request.getHeader('jwt');
     const jwtHeaderString = JSON.stringify(jwtHeader);
     logger.log(jwtHeaderString);
@@ -217,6 +218,15 @@ function onClientRequest(request) {
     logger.log(typeof (jwtJsonObject));
     logger.log(jwtJsonObject);
     logger.log(jwtJsonObject['name']);
+
+    try {
+        let response = await httpRequest('https://jaescalo.github.io/');
+        logger.log(response.ok);
+        // Action to take on successful completion of HTTP request
+    } catch (error) {
+        logger.log(error.toString());
+        // Action to take on successful completion of HTTP request
+    }
 }
 
 export { onClientRequest };
