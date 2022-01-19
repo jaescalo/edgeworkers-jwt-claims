@@ -190,4 +190,9 @@ export function onClientRequest (request) {
     let jwtBase64PayloadDecodedString = String.fromCodePoint(...jwtBase64PayloadDecoded);
     logger.log(typeof(jwtBase64PayloadDecodedString));
     logger.log(jwtBase64PayloadDecodedString);
+
+    let jwtJsonObject = JSON.parse(jwtBase64PayloadDecodedString);
+    logger.log(typeof (jwtJsonObject));
+    logger.log(jwtJsonObject);
+    logger.log(jwtJsonObject['name']);
 }
