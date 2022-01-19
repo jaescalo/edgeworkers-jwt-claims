@@ -220,9 +220,8 @@ async function onClientRequest(request) {
     logger.log(jwtJsonObject['name']);
 
     try {
-        let response = await httpRequest('https://jaescalo.github.io/');
+        let response = await httpRequest('https://jaescalo.test.edgekey-staging.net/demo-site');
         logger.log(response.ok);
-        logger.log(response.status);
         // Action to take on successful completion of HTTP request
     } catch (error) {
         logger.log(error.toString());
