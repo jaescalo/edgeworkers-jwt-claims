@@ -222,6 +222,7 @@ async function onClientRequest(request) {
     try {
         let response = await httpRequest('https://jaescalo.github.io/');
         logger.log(response.ok);
+        logger.log(response.status);
         // Action to take on successful completion of HTTP request
     } catch (error) {
         logger.log(error.toString());
