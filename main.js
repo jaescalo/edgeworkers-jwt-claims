@@ -217,10 +217,16 @@ async function onClientRequest(request) {
     let jwtJsonObject = JSON.parse(jwtBase64PayloadDecodedString);
     logger.log(typeof (jwtJsonObject));
     logger.log(jwtJsonObject);
-    logger.log(jwtJsonObject['name']);
+
+    let nameClaim = jwtJsonObject['name'];
+    logger.log(nameClaim);
 
     try {
-        let response = await httpRequest('https://jaescalo.test.edgekey-staging.net/demo-site');
+        let response = await httpRequest('https://jaescalo.test.edgekey-staging.net/mouk', {
+            method: "GET",
+            headers: { "jwt_auth": nameClaim }
+        });
+        
         logger.log(response.ok);
         logger.log(response.status);
         // Action to take on successful completion of HTTP request
