@@ -188,6 +188,6 @@ export function onClientRequest (request) {
     logger.log(jwtBase64PayloadDecoded);
 
     let jwtBase64PayloadDecodedString = String.fromCodePoint(...jwtBase64PayloadDecoded);
-    console.log(typeof(jwtBase64PayloadDecodedString));
-    console.log(jwtBase64PayloadDecodedString);
+    logger.log(typeof(jwtBase64PayloadDecodedString));
+    logger.log(jwtBase64PayloadDecodedString);
 }
