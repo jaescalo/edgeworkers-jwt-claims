@@ -233,7 +233,7 @@ async function onClientRequest(request) {
         if (response.status != 200 ) {
             request.respondWith(
                 200, {},
-                '<html><body><h1>Hello World From Akamai EdgeWorkers</h1></body></html>');
+                '{ "status": ["DENIED"], "data": ["1", "2"], "month": 3, "year": 2017 }');
         }
         // Action to take on successful completion of HTTP request
     } catch (error) {
